@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Header
+ *
+*/
+
+.company_name {
+  text-align: center;
+}
+
+.hamburger {
+  font-size: x-large;
+  display: block;
+  background: none;
+  width: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
+.nav_list {
+  z-index: 1;
+  position: absolute;
+  padding: 0;
+  list-style-type: none;
+  left: -200px;
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav_list.show {
+  transform: translate(200px);
+}
+
+ul {
+  list-style-type: disc;
+}
+
+.nav_list > li:not(:last-child) {
+  margin-bottom: 5px;
+  border-bottom: 1px solid black;
+  min-width: 8em;
+}
+
+.nav_list a {
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+  font-size: large;
+}
+
+/* 
+ *
+ * Jumbotron
+ *
+*/
+
+.jumbotron {
+  position: relative;
+}
+
+.hero_img {
+  width: 100%;
+  aspect-ratio: 4/2;
+  object-fit: cover;
+}
+
+.jumbotron > h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  color: white;
+}
+
+/* 
+ *
+ * main
+ *
+*/
+
+h2 {
+  text-align: center;
+}
+
+.restaurant_list {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1em;
+  column-gap: 0.7em;
+}
+
+figure {
+  margin: 2px;
+  text-align: center;
+}
+
+.restaurant_item {
+  border-radius: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 20em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.restaurant_item.first {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.restaurant_item.first .item_image {
+  aspect-ratio: 4/3;
+}
+
+.item_image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
