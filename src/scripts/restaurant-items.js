@@ -1,14 +1,16 @@
 import * as data from "../DATA.json";
 import createMultipleElements from "./utils";
 
+const { openModal } = require("./modal.js");
+
 const restaurantItems = document.querySelectorAll(".restaurant_item");
 
 restaurantItems.forEach((items, index) => {
-  const [figure, img, figCaption, p] = createMultipleElements(
+  const [figure, img, figCaption, button] = createMultipleElements(
     "figure",
     "img",
     "figcaption",
-    "p"
+    "button"
   );
 
   figCaption.innerText = data.restaurants[index].name;
@@ -19,6 +21,12 @@ restaurantItems.forEach((items, index) => {
   figure.append(figCaption);
   items.append(figure);
 
-  p.textContent = data.restaurants[index].description;
-  items.append(p);
+  //button to open restaurant-item detail
+
+  button.textContent = "detail";
+  button.classList.add("detail_button");
+  button.addEventListener("click", () => {
+    openModal(data.restaurants[index], index);
+  });
+  items.prepend(button);
 });

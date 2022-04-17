@@ -1,8 +1,9 @@
 import "regenerator-runtime"; /* for async await transpile */
 import "../styles/main.css";
+import "../styles/modal.css";
 import "../styles/responsive.css";
 
-import "./dom.js";
+import "./restaurant-items.js";
 
 const navList = document.querySelector(".nav_list");
 const burgerButton = document.querySelector(".hamburger");
