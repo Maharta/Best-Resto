@@ -92,9 +92,10 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
   .jumbotron {
     border-radius: 1rem;
+    max-width: 1000px;
   }
   .hero_img {
     border-radius: 1rem;

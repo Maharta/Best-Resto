@@ -15,6 +15,10 @@ restaurantItems.forEach((items, index) => {
 
   figCaption.innerText = data.restaurants[index].name;
   img.setAttribute("src", data.restaurants[index].pictureId);
+  img.setAttribute(
+    "alt",
+    `Gambar dari cafe yang bernama ${data.restaurants[index].name}`
+  );
   img.classList.add("item_image");
 
   figure.append(img);
