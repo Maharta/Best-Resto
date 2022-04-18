@@ -1,8 +1,97 @@
 @media screen and (max-width: 375px) {
   .jumbotron > h1 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 425px) {
+  figcaption {
+    font-size: 1.7rem;
+  }
+
+  .restaurant_item.first figcaption {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .jumbotron > h1 {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .header {
+    padding-left: 2rem;
+  }
+
+  .company_name {
+    padding: 1rem;
+    text-align: start;
+  }
+
+  .jumbotron > h1 {
+    font-size: 2.7rem;
+  }
+
+  figcaption {
+    font-size: 2rem;
+  }
+
+  .modal {
+    max-width: 500px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav_list {
+    display: flex;
+    position: static;
+    gap: 3rem;
+    margin-left: 1rem;
+    background-color: darkslategray;
+  }
+
+  .nav_list > li {
+    display: inline;
+  }
+
+  .nav_list a {
+    color: white;
+  }
+
+  .nav_list > li:not(:last-child) {
+    border-bottom: none;
+    min-width: auto;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .jumbotron {
+    margin: 0 auto 0 auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .restaurant_list {
+    grid-template-columns: repeat(2, minmax(auto, 375px));
+  }
+  .jumbotron > h1 {
+    font-size: 3.2rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .jumbotron {
+    border-radius: 1rem;
+  }
+  .hero_img {
+    border-radius: 1rem;
+  }
+
+  .header {
+    padding-left: 2.5rem;
+  }
 }

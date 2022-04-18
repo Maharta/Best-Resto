@@ -50,12 +50,15 @@
 
 .modal_header .modal_image {
   max-width: 100%;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  width: 100%;
 }
 
 .modal_body {
   padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.modal_description {
+  text-align: justify;
 }
 
 .modal_title,
