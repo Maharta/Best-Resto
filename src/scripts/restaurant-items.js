@@ -23,7 +23,7 @@ restaurantItems.forEach((items, index) => {
 
   //button to open restaurant-item detail
 
-  button.textContent = "detail";
+  button.textContent = "DETAIL";
   button.classList.add("detail_button");
   button.addEventListener("click", () => {
     openModal(data.restaurants[index], index);

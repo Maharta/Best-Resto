@@ -112,8 +112,9 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(auto, 350px));
   row-gap: 1em;
+  justify-content: center;
   column-gap: 0.7em;
 }
 
@@ -154,6 +155,15 @@ figcaption {
   position: absolute;
   top: 5px;
   right: 5px;
+  z-index: 1;
+  border: none;
+  outline: none;
+  background: none;
+  background-image: linear-gradient(#8671ff, #8380ff, #8298ff, #8aa1ff);
+  border-radius: 1rem;
+  padding: 0.5rem 0.7rem;
+  color: white;
+  font-weight: bolder;
 }
 
 .restaurant_item.first {
@@ -171,6 +181,7 @@ figcaption {
 
 .restaurant_item.first .item_image {
   aspect-ratio: 4/3;
+  width: 100%;
 }
 
 .item_image {
