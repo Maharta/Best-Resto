@@ -25,6 +25,7 @@ const openModal = (restaurant, index) => {
 
   const img = document.querySelector(".modal_image");
   img.setAttribute("src", restaurant.pictureId);
+  img.setAttribute("alt", `Gambar dari restoran ${restaurant.name}`);
 
   modalTitle.textContent = restaurant.name;
   modalCity.textContent = restaurant.city;

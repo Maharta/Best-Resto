@@ -17,7 +17,7 @@ restaurantItems.forEach((items, index) => {
   img.setAttribute("src", data.restaurants[index].pictureId);
   img.setAttribute(
     "alt",
-    `Gambar dari cafe yang bernama ${data.restaurants[index].name}`
+    `Gambar dari restoran yang bernama ${data.restaurants[index].name}`
   );
   img.classList.add("item_image");
 
