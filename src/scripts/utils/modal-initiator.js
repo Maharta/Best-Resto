@@ -1,41 +1,46 @@
-const modal = document.getElementById('modal');
-const overlay = document.getElementById('overlay');
-const modalCloseButton = document.querySelector('[data-close-button]');
+class ModalInitiator {
+  static closeModal(index) {
+    const modal = document.getElementById('modal');
+    const overlay = document.getElementById('overlay');
+    if (!modal) return;
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
 
-const closeModal = (index) => {
-  if (!modal) return;
-  modal.classList.remove('active');
-  overlay.classList.remove('active');
+    // focus back to the last detail button for tab accessbility
+    const focusableDetailButton = document.querySelectorAll('.detail_button');
+    focusableDetailButton[index].focus();
+  }
 
-  // focus back to the last detail button for tab accessbility
-  const focusableDetailButton = document.querySelectorAll('.detail_button');
-  focusableDetailButton[index].focus();
-};
+  static openModal(restaurant, index) {
+    const modal = document.getElementById('modal');
+    const overlay = document.getElementById('overlay');
+    const modalCloseButton = document.querySelector('[data-close-button]');
 
-const openModal = (restaurant, index) => {
-  if (!modal) return;
-  modal.classList.add('active');
-  overlay.classList.add('active');
+    if (!modal) return;
 
-  const modalTitle = document.querySelector('.modal_title');
-  const modalCity = document.querySelector('.modal_city');
-  const modalRating = document.querySelector('.modal_rating');
-  const modalDescription = document.querySelector('.modal_description');
+    modal.classList.add('active');
+    overlay.classList.add('active');
 
-  const img = document.querySelector('.modal_image');
-  img.setAttribute('src', restaurant.pictureId);
-  img.setAttribute('alt', `Gambar dari restoran ${restaurant.name}`);
+    const modalTitle = document.querySelector('.modal_title');
+    const modalCity = document.querySelector('.modal_city');
+    const modalRating = document.querySelector('.modal_rating');
+    const modalDescription = document.querySelector('.modal_description');
 
-  modalTitle.textContent = restaurant.name;
-  modalCity.textContent = restaurant.city;
-  modalRating.textContent = restaurant.rating;
+    const img = document.querySelector('.modal_image');
+    img.setAttribute('src', restaurant.pictureId);
+    img.setAttribute('alt', `Gambar dari restoran ${restaurant.name}`);
 
-  modalDescription.textContent = restaurant.description;
-  modalCloseButton.focus();
+    modalTitle.textContent = restaurant.name;
+    modalCity.textContent = restaurant.city;
+    modalRating.textContent = restaurant.rating;
 
-  modalCloseButton.addEventListener('click', () => {
-    closeModal(index);
-  });
-};
+    modalDescription.textContent = restaurant.description;
+    modalCloseButton.focus();
 
-export default openModal;
+    modalCloseButton.addEventListener('click', () => {
+      this.closeModal(index);
+    });
+  }
+}
+
+export default ModalInitiator;
