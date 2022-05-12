@@ -1,6 +1,20 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*
+  main for detail page.
+*/
+.main_detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .restaurant_detail_container {
   display: flex;
   flex-direction: column;
+  max-width: 750px;
 }
 
 .restaurant_detail img {
@@ -15,6 +29,7 @@
   transform: translate(-50%, -50%);
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+.restaurant_detail .resto_attributes,
+.restaurant_detail .resto_description {
+  padding-left: 1rem;
 }
