@@ -7,6 +7,7 @@ import App from './app';
 const app = new App({
   button: document.querySelector('#hamburger'),
   drawer: document.querySelector('#nav_list'),
+  jumbotron: document.querySelector('#jumbotron'),
   content: document.querySelector('#mainContent'),
 });
 

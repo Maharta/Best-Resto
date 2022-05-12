@@ -11,7 +11,7 @@ const createRestaurantItemTemplate = (restaurant) => `<article class="restaurant
   </figure></article>
   `;
 
-const createRestaurantFirstItemTemplateModal = (restaurant, index) => {
+const createRestaurantItemTemplates = (restaurant, index, array) => {
   const [figure, img, figCaption, button, article] = createMultipleElements(
     'figure',
     'img',
@@ -22,7 +22,12 @@ const createRestaurantFirstItemTemplateModal = (restaurant, index) => {
 
   article.classList.add('restaurant_item');
 
+  if (index === 0 || index === array.length - 1) {
+    article.classList.add('first');
+  }
+
   figCaption.innerText = restaurant.name;
+  figCaption.classList.add('restaurant_name');
   img.setAttribute('src', CONFIG.BASE_IMG_URL + restaurant.pictureId);
   img.setAttribute('alt', `Gambar dari restoran yang bernama ${restaurant.name}`);
   img.classList.add('item_image');
@@ -43,17 +48,4 @@ const createRestaurantFirstItemTemplateModal = (restaurant, index) => {
   return article;
 };
 
-const createRestaurantFirstItemTemplate = (restaurant) => `<article class="restaurant_item first">
-<button class="detail_button">DETAIL</button>
-<figure><img src="${CONFIG.BASE_IMG_URL + restaurant.pictureId}" alt="Restoran yang bernama ${
-  restaurant.name
-}" class="item_image">
-<figcaption>${restaurant.name}</figcaption>
-</figure></article>
-`;
-
-export {
-  createRestaurantItemTemplate,
-  createRestaurantFirstItemTemplate,
-  createRestaurantFirstItemTemplateModal,
-};
+export { createRestaurantItemTemplate, createRestaurantItemTemplates };

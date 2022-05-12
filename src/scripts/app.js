@@ -3,9 +3,12 @@ import UrlParser from './routes/url-parser';
 import DrawerInitiator from './utils/drawer-initiator';
 
 class App {
-  constructor({ button, drawer, content }) {
+  constructor({
+    button, drawer, jumbotron, content,
+  }) {
     this._button = button;
     this._drawer = drawer;
+    this._jumbotron = jumbotron;
     this._content = content;
 
     this._initialAppShell();
@@ -15,6 +18,7 @@ class App {
     DrawerInitiator.init({
       button: this._button,
       drawer: this._drawer,
+      jumbotron: this._jumbotron,
       content: this._content,
     });
   }

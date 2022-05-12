@@ -1,3 +1,5 @@
+import CONSTANT from '../globals/config';
+
 class ModalInitiator {
   static closeModal(index) {
     const modal = document.getElementById('modal');
@@ -27,7 +29,7 @@ class ModalInitiator {
     const modalDescription = document.querySelector('.modal_description');
 
     const img = document.querySelector('.modal_image');
-    img.setAttribute('src', restaurant.pictureId);
+    img.setAttribute('src', CONSTANT.BASE_IMG_URL + restaurant.pictureId);
     img.setAttribute('alt', `Gambar dari restoran ${restaurant.name}`);
 
     modalTitle.textContent = restaurant.name;
