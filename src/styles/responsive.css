@@ -23,6 +23,20 @@
   }
 }
 
+@media screen and (min-width: 450px) {
+  .restaurant_detail:not(.restaurant_name) {
+    font-size: medium;
+  }
+
+  .review_title {
+    font-size: x-large;
+  }
+
+  .review_text {
+    font-size: medium;
+  }
+}
+
 @media screen and (min-width: 500px) {
   .jumbotron > h1 {
     font-size: 2.3rem;
@@ -80,6 +94,19 @@
 @media screen and (min-width: 750px) {
   .jumbotron {
     margin: 0 auto 0 auto;
+  }
+
+  .restaurant_detail_container {
+    border-radius: 1rem;
+  }
+
+  .restaurant_detail_container img {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .user_reviews {
+    border-radius: 1rem;
   }
 }
 

@@ -1,6 +1,5 @@
 import CONFIG from '../../globals/config';
 import createMultipleElements from '../../utils/multiple-element-creator';
-import ModalInitiator from '../../utils/modal-initiator';
 
 const createRestaurantItemTemplate = (restaurant) => `<article class="restaurant_item">
   <button class="detail_button">DETAIL</button>
@@ -12,11 +11,11 @@ const createRestaurantItemTemplate = (restaurant) => `<article class="restaurant
   `;
 
 const createRestaurantItemTemplates = (restaurant, index, array) => {
-  const [figure, img, figCaption, button, article] = createMultipleElements(
+  const [figure, img, figCaption, a, article] = createMultipleElements(
     'figure',
     'img',
     'figcaption',
-    'button',
+    'a',
     'article',
   );
 
@@ -38,14 +37,52 @@ const createRestaurantItemTemplates = (restaurant, index, array) => {
 
   // button to open restaurant-item detail
 
-  button.textContent = 'DETAIL';
-  button.classList.add('detail_button');
-  button.addEventListener('click', () => {
-    ModalInitiator.openModal(restaurant, index);
-  });
+  a.textContent = 'DETAIL';
+  a.classList.add('detail_button');
+  a.setAttribute('href', `#/detail/${restaurant.id}`);
 
-  article.prepend(button);
+  article.prepend(a);
   return article;
 };
 
-export { createRestaurantItemTemplate, createRestaurantItemTemplates };
+const createRestaurantDetailTemplate = (restaurant) => ` 
+<div class="restaurant_detail">
+<figure><img src="${CONFIG.BASE_IMG_URL}${restaurant.pictureId}" alt="Restoran yang bernama ${restaurant.name}">
+  <figcaption class="restaurant_name">${restaurant.name}</figcaption>
+</figure>
+ <p class="resto_attributes">Kota : ${restaurant.city}</p>
+ <p class="resto_attributes">Alamat : ${restaurant.address}</p>
+ <p class="resto_attributes">Rating : ${restaurant.rating}</p>
+ <hr>
+ <div class="menu_container">
+ <p class="resto_description">${restaurant.description}</p>
+ <section class="menu_list">
+   <p>Makanan</p>
+   <ul id="makanan">
+   </ul>
+ </section>
+ <section class="menu_list">
+  <p>Minuman</p>
+  <ul id="minuman">
+  </ul>
+</section>
+ </div>
+</div>`;
+
+const createRestaurantReviewsTemplate = (review) => `
+<div class="review">
+  <p><span class="username">${review.name}</span> <br><span class="date">${review.date}</span></p>
+  <p><span class="review_text">${review.review}</span></p>
+</div>`;
+
+const createMenuListTemplate = (name) => `
+<li>${name}</li>
+`;
+
+export {
+  createRestaurantItemTemplate,
+  createRestaurantItemTemplates,
+  createRestaurantDetailTemplate,
+  createRestaurantReviewsTemplate,
+  createMenuListTemplate,
+};
