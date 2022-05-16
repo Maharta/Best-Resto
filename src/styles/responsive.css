@@ -13,6 +13,16 @@
   }
 }
 
+@media screen and (max-width: 750px) {
+  .header {
+    margin-bottom: 0;
+  }
+
+  .footer {
+    margin-top: 0;
+  }
+}
+
 @media screen and (min-width: 425px) {
   .restaurant_name {
     font-size: 1.7rem;

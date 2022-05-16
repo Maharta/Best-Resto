@@ -10,7 +10,8 @@
   border-radius: 2rem;
   max-width: 80%;
   max-height: 80vh;
-  width: max-content;
+  width: 60vw;
+  min-width: 300px;
   background-color: white;
   top: 50%;
   left: 50%;
@@ -37,21 +38,17 @@
   border: none;
   top: 0;
   right: 0;
-  margin: 1rem 1rem 0 0;
   font-size: 2rem;
   padding: 0.5rem 0.9rem;
+  margin-right: 8px;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 1rem;
 }
 
 .modal_header .close-button:focus {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.modal_header .modal_image {
-  max-width: 100%;
-  width: 100%;
+  background-color: rgba(75, 67, 67, 0.9);
+  color: white;
 }
 
 .modal_body {
@@ -60,12 +57,6 @@
 
 .modal_description {
   text-align: justify;
-}
-
-.modal_title,
-.modal_city,
-.modal_rating {
-  margin: 0.5rem 0 0.5rem 0;
 }
 
 #overlay {

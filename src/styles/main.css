@@ -10,6 +10,16 @@ body {
   padding: 0;
 }
 
+.mainContent {
+  flex: 1;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .jumbotron.none {
   display: none;
 }
@@ -174,6 +184,10 @@ ul {
   column-gap: 0.7em;
 }
 
+.restaurant_list:last-child {
+  margin-bottom: 1rem;
+}
+
 figure {
   position: relative;
   height: 100%;
@@ -274,6 +288,7 @@ figure {
 
 .footer {
   display: flex;
+  flex-direction: column;
   background-color: darkslategray;
   margin-top: 2rem;
   text-align: center;
@@ -289,4 +304,9 @@ figure {
 
 .footer > a:hover {
   font-weight: 800;
+}
+
+.footer > .attribution {
+  padding-top: 0;
+  padding-bottom: 1rem;
 }

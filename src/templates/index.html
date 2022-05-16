@@ -2,10 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Restaurant Apps Starter Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2f4f4f"/>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+    <link rel="icon" href="images/icons/favicon.png">
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+    <title>Restaurant Apps Starter Project</title>
   </head>
-  <body>
+  <body class="body">
     <div class="skip-container">
       <a href="#main_title">Skip to Content</a>
     </div>
@@ -14,8 +19,8 @@
       <button id="hamburger" class="hamburger">☰</button>
       <nav class="nav">
         <ul id="nav_list" class="nav_list">
-          <li><a href="/">Home</a></li>
-          <li><a href="#">Favorite</a></li>
+          <li><a href="#/">Home</a></li>
+          <li><a href="#/favorites">Favorite</a></li>
           <li>
             <a href="https://www.linkedin.com/in/maharta-pamuji/">About Us</a>
           </li>
@@ -26,23 +31,12 @@
       <img class="hero_img" src="./images/heros/hero-image_2.jpg" alt="Meja makan dengan berbagai makanan lezat" />
       <h1>Temukan Restaurant Terbaik Hanya di Sini</h1>
     </div>
-    <main id="mainContent">
-      <div class="modal" id="modal">
-        <div class="modal_header">
-          <img class="modal_image" />
-          <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="modal_body">
-          <h3 class="modal_title"></h3>
-          <p class="modal_city"></p>
-          <p class="modal_rating"></p>
-          <p class="modal_description"></p>
-        </div>
-      </div>
-      <div id="overlay"></div> 
+    <main id="mainContent" class="mainContent">
+      
     </main>
     <footer class="footer">
       <a href="https://github.com/Maharta/Best-Resto">Website by @Maharta</p>
+      <a class="attribution" href="https://www.flaticon.com/free-icons/app" title="app icons">PWA icon created by Freepik - Flaticon</a>
     </footer>
   </body>
 </html>

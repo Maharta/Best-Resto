@@ -1,12 +1,12 @@
-import CONFIG from '../../globals/config';
+import CONSTANT from '../../globals/config';
 import createMultipleElements from '../../utils/multiple-element-creator';
 
 const createRestaurantItemTemplate = (restaurant) => `<article class="restaurant_item">
-  <button class="detail_button">DETAIL</button>
-  <figure><img src="${CONFIG.BASE_IMG_URL + restaurant.pictureId}" alt="Restoran yang bernama ${
+  <a href="#/detail/${restaurant.id}" class="detail_button">DETAIL</a>
+  <figure><img src="${CONSTANT.BASE_IMG_URL + restaurant.pictureId}" alt="Restoran yang bernama ${
   restaurant.name
 }" class="item_image">
-  <figcaption>${restaurant.name}</figcaption>
+  <figcaption class="restaurant_name">${restaurant.name}</figcaption>
   </figure></article>
   `;
 
@@ -27,8 +27,8 @@ const createRestaurantItemTemplates = (restaurant, index, array) => {
 
   figCaption.innerText = restaurant.name;
   figCaption.classList.add('restaurant_name');
-  img.setAttribute('src', CONFIG.BASE_IMG_URL + restaurant.pictureId);
-  img.setAttribute('alt', `Gambar dari restoran yang bernama ${restaurant.name}`);
+  img.setAttribute('src', CONSTANT.BASE_IMG_URL + restaurant.pictureId);
+  img.setAttribute('alt', `Restoran yang bernama ${restaurant.name}`);
   img.classList.add('item_image');
 
   figure.append(img);
@@ -47,7 +47,7 @@ const createRestaurantItemTemplates = (restaurant, index, array) => {
 
 const createRestaurantDetailTemplate = (restaurant) => ` 
 <div class="restaurant_detail">
-<figure><img src="${CONFIG.BASE_IMG_URL}${restaurant.pictureId}" alt="Restoran yang bernama ${restaurant.name}">
+<figure><img src="${CONSTANT.BASE_IMG_URL}${restaurant.pictureId}" alt="Restoran yang bernama ${restaurant.name}">
   <figcaption class="restaurant_name">${restaurant.name}</figcaption>
 </figure>
  <p class="resto_attributes">Kota : ${restaurant.city}</p>
@@ -67,6 +67,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </ul>
 </section>
  </div>
+<button id="review_button" class="review_button">Reviews</button>
 </div>`;
 
 const createRestaurantReviewsTemplate = (review) => `
@@ -79,10 +80,24 @@ const createMenuListTemplate = (name) => `
 <li>${name}</li>
 `;
 
+const createLikeButtonTemplate = () => `
+<button aria-label="like this restaurant" id="likeButton" class="like">
+   <i class="fa fa-heart-o" aria-hidden="true"></i>
+</button>
+`;
+
+const createLikedButtonTemplate = () => `
+<button aria-label="unlike this restaurant" id="likeButton" class="like">
+  <i class="fa fa-heart" aria-hidden="true"></i>
+</button>
+`;
+
 export {
   createRestaurantItemTemplate,
   createRestaurantItemTemplates,
   createRestaurantDetailTemplate,
   createRestaurantReviewsTemplate,
   createMenuListTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
 };

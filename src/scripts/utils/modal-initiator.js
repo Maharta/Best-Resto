@@ -1,20 +1,20 @@
-import CONSTANT from '../globals/config';
+import { createRestaurantReviewsTemplate } from '../views/templates/template-creator';
 
 class ModalInitiator {
-  static closeModal(index) {
+  static closeModal() {
     const modal = document.getElementById('modal');
     const overlay = document.getElementById('overlay');
     if (!modal) return;
     modal.classList.remove('active');
     overlay.classList.remove('active');
 
-    // focus back to the last detail button for tab accessbility
-    const focusableDetailButton = document.querySelectorAll('.detail_button');
-    focusableDetailButton[index].focus();
+    // focus back to review button for tab accessbility
+    document.querySelector('#review_button').focus();
   }
 
-  static openModal(restaurant, index) {
+  static openModal(reviews) {
     const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal_body');
     const overlay = document.getElementById('overlay');
     const modalCloseButton = document.querySelector('[data-close-button]');
 
@@ -23,24 +23,14 @@ class ModalInitiator {
     modal.classList.add('active');
     overlay.classList.add('active');
 
-    const modalTitle = document.querySelector('.modal_title');
-    const modalCity = document.querySelector('.modal_city');
-    const modalRating = document.querySelector('.modal_rating');
-    const modalDescription = document.querySelector('.modal_description');
+    reviews.forEach((review) => {
+      modalBody.innerHTML += createRestaurantReviewsTemplate(review);
+    });
 
-    const img = document.querySelector('.modal_image');
-    img.setAttribute('src', CONSTANT.BASE_IMG_URL + restaurant.pictureId);
-    img.setAttribute('alt', `Gambar dari restoran ${restaurant.name}`);
-
-    modalTitle.textContent = restaurant.name;
-    modalCity.textContent = restaurant.city;
-    modalRating.textContent = restaurant.rating;
-
-    modalDescription.textContent = restaurant.description;
     modalCloseButton.focus();
 
     modalCloseButton.addEventListener('click', () => {
-      this.closeModal(index);
+      this.closeModal();
     });
   }
 }

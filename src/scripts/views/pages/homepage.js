@@ -3,6 +3,8 @@ import { createRestaurantItemTemplates } from '../templates/template-creator';
 
 const Homepage = {
   async render() {
+    document.querySelector('.skip-container').classList.remove('none');
+    document.querySelector('#jumbotron').classList.remove('none');
     return `
     <h2 id="main_title" class="main_title">Restaurant List</h2>
     <section class="restaurant_list">
