@@ -1,8 +1,10 @@
 import CONSTANT from '../../globals/config';
-import createMultipleElements from '../../utils/multiple-element-creator';
 
 const createRestaurantItemTemplate = (restaurant) => `<article class="restaurant_item">
   <a href="#/detail/${restaurant.id}" class="detail_button">DETAIL</a>
+  <div class="rating_container">
+    <p>⭐️<span class="rating_score">${restaurant.rating}</span></p>
+  </div>
   <figure><img src="${CONSTANT.BASE_IMG_URL + restaurant.pictureId}" alt="Restoran yang bernama ${
   restaurant.name
 }" class="item_image">
@@ -11,38 +13,20 @@ const createRestaurantItemTemplate = (restaurant) => `<article class="restaurant
   `;
 
 const createRestaurantItemTemplates = (restaurant, index, array) => {
-  const [figure, img, figCaption, a, article] = createMultipleElements(
-    'figure',
-    'img',
-    'figcaption',
-    'a',
-    'article',
-  );
-
-  article.classList.add('restaurant_item');
-
+  const staticHtml = `<a href="#/detail/${restaurant.id}" class="detail_button">DETAIL</a>
+    <div class="rating_container">
+      <p>⭐️<span class="rating_score">${restaurant.rating}</span></p>
+    </div>
+    <figure><img src="${CONSTANT.BASE_IMG_URL + restaurant.pictureId}" alt="Restoran yang bernama ${
+  restaurant.name
+}" class="item_image">
+    <figcaption class="restaurant_name">${restaurant.name}</figcaption>
+    </figure></article>
+    `;
   if (index === 0 || index === array.length - 1) {
-    article.classList.add('first');
+    return `<article class="restaurant_item first">${staticHtml}`;
   }
-
-  figCaption.innerText = restaurant.name;
-  figCaption.classList.add('restaurant_name');
-  img.setAttribute('src', CONSTANT.BASE_IMG_URL + restaurant.pictureId);
-  img.setAttribute('alt', `Restoran yang bernama ${restaurant.name}`);
-  img.classList.add('item_image');
-
-  figure.append(img);
-  figure.append(figCaption);
-  article.append(figure);
-
-  // button to open restaurant-item detail
-
-  a.textContent = 'DETAIL';
-  a.classList.add('detail_button');
-  a.setAttribute('href', `#/detail/${restaurant.id}`);
-
-  article.prepend(a);
-  return article;
+  return `<article class="restaurant_item">${staticHtml}`;
 };
 
 const createRestaurantDetailTemplate = (restaurant) => ` 

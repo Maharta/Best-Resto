@@ -14,6 +14,8 @@ const app = new App({
 });
 
 window.addEventListener('hashchange', () => {
+  const url = window.location.hash.slice(1);
+  if (url === 'mainContent') return; // for skip to content accessibility
   app.renderPage();
 });
 

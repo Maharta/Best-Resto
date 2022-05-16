@@ -4,7 +4,6 @@ import { createRestaurantItemTemplate } from '../templates/template-creator';
 const Favorites = {
   async render() {
     document.querySelector('#jumbotron').classList.add('none');
-    document.querySelector('.skip-container').classList.add('none');
     return `
     <h2 id="main_title" class="main_title">Favorites</h2>
     <section class="restaurant_list">

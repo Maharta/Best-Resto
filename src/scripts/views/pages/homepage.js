@@ -3,7 +3,6 @@ import { createRestaurantItemTemplates } from '../templates/template-creator';
 
 const Homepage = {
   async render() {
-    document.querySelector('.skip-container').classList.remove('none');
     document.querySelector('#jumbotron').classList.remove('none');
     return `
     <h2 id="main_title" class="main_title">Restaurant List</h2>
@@ -16,7 +15,7 @@ const Homepage = {
     const restaurants = await RestaurantApi.getAllRestaurants();
     const restaurantListContainer = document.querySelector('.restaurant_list');
     restaurants.forEach((restaurant, index, array) => {
-      restaurantListContainer.append(createRestaurantItemTemplates(restaurant, index, array));
+      restaurantListContainer.innerHTML += createRestaurantItemTemplates(restaurant, index, array);
     });
   },
 };

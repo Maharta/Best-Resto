@@ -220,6 +220,22 @@ figure {
   overflow-y: hidden;
 }
 
+.restaurant_item .rating_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 8px 0;
+  padding: 0 8px;
+  background-color: rgba(0, 0, 0, 0.441);
+  z-index: 1;
+  color: white;
+}
+
+.restaurant_item .rating_container .rating_score {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
 .detail_button {
   position: absolute;
   text-decoration: none;
@@ -307,6 +323,7 @@ figure {
 }
 
 .footer > .attribution {
+  min-height: 44px;
   padding-top: 0;
   padding-bottom: 1rem;
 }

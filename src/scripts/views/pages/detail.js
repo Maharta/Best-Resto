@@ -10,7 +10,6 @@ import {
 const Detail = {
   async render() {
     document.querySelector('#jumbotron').classList.add('none');
-    document.querySelector('.skip-container').classList.add('none');
     return `
     <div class="modal" id="modal">
         <div class="modal_header">
@@ -57,6 +56,7 @@ const Detail = {
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,
+        rating: restaurant.rating,
         pictureId: restaurant.pictureId,
       },
     });
