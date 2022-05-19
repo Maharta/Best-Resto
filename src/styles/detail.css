@@ -10,6 +10,12 @@
   main for detail page.
 */
 
+.restaurant_list .no_favorite {
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
 .restaurant_detail_container {
   display: flex;
   flex-direction: column;

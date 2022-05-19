@@ -1,6 +1,7 @@
 import RestaurantApi from '../../data/restaurant-api';
+import FavoriteRestaurantIdb from '../../data/restaurant-db';
 import UrlParser from '../../routes/url-parser';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import ReviewButtonInitiator from '../../utils/review-button-initiator';
 import {
   createMenuListTemplate,
@@ -51,8 +52,9 @@ const Detail = {
       restaurant,
     });
 
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favRestaurantModel: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,

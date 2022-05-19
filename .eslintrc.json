@@ -1,7 +1,11 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true,
+        "jasmine": true,
+        "codeceptjs": true
+        
     },
     "extends": [
         "airbnb-base"
@@ -14,6 +18,9 @@
         "no-underscore-dangle": "off",
         "dot-notation": "off",
         "no-console": "off",
-        "no-restricted-globals": "off"
+        "no-restricted-globals": "off",
+        "class-methods-use-this": "off",
+        "no-new": "off",
+        "consistent-return": "off"
     }
 }
