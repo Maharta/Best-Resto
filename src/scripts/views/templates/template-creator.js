@@ -5,9 +5,9 @@ const createRestaurantItemTemplate = (restaurant) => `<article class="restaurant
   <div class="rating_container">
     <p>⭐️<span class="rating_score">${restaurant.rating}</span></p>
   </div>
-  <figure><img src="${CONSTANT.BASE_IMG_URL + restaurant.pictureId}" alt="Restoran yang bernama ${
-  restaurant.name
-}" class="item_image">
+  <figure><img class="item_image lazyload" data-src="${
+  CONSTANT.BASE_IMG_URL + restaurant.pictureId
+}" alt="Restoran yang bernama ${restaurant.name}">
   <figcaption class="restaurant_name">${restaurant.name}</figcaption>
   </figure></article>
   `;
@@ -17,9 +17,9 @@ const createRestaurantItemTemplates = (restaurant, index, array) => {
     <div class="rating_container">
       <p>⭐️<span class="rating_score">${restaurant.rating}</span></p>
     </div>
-    <figure><img src="${CONSTANT.BASE_IMG_URL + restaurant.pictureId}" alt="Restoran yang bernama ${
-  restaurant.name
-}" class="item_image">
+    <figure><img class="item_image lazyload" data-src="${
+  CONSTANT.BASE_IMG_URL + restaurant.pictureId
+}" alt="Restoran yang bernama ${restaurant.name}" class="item_image">
     <figcaption class="restaurant_name">${restaurant.name}</figcaption>
     </figure></article>
     `;

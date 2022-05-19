@@ -27,11 +27,15 @@
       </nav>
     </header>
     <div id="jumbotron" class="jumbotron">
-      <img class="hero_img" src="./images/heros/hero-image_2.jpg" alt="Meja makan dengan berbagai makanan lezat" />
+      <picture class="jumbotron">
+        <source class="hero_img" media="(max-width: 480px)" srcset="./images/heros/heroImage-small.jpg">
+        <source class="hero_img" media="(max-width: 600px)" srcset="./images/heros/heroImage-medium.jpg">
+        <source class="hero_img" media="(max-width: 800px)" srcset="./images/heros/heroImage-large.jpg">
+        <img class="hero_img" src="./images/heros/heroImage.jpg" alt="Meja makan dengan berbagai makanan lezat" />
+      </picture>
       <h1>Temukan Restaurant Terbaik Hanya di Sini</h1>
     </div>
     <main id="mainContent" class="mainContent">
-      
     </main>
     <footer class="footer">
       <a href="https://github.com/Maharta/Best-Resto">Website by @Maharta</p>

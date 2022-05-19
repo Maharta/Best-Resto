@@ -4,8 +4,7 @@
         "es2021": true,
         "node": true,
         "jasmine": true,
-        "codeceptjs": true
-        
+        "codeceptjs/codeceptjs": true        
     },
     "extends": [
         "airbnb-base"
@@ -15,6 +14,7 @@
         "sourceType": "module"
     },
     "rules": {
+        "quotes": 1,
         "no-underscore-dangle": "off",
         "dot-notation": "off",
         "no-console": "off",
@@ -22,5 +22,8 @@
         "class-methods-use-this": "off",
         "no-new": "off",
         "consistent-return": "off"
-    }
+    },
+    "plugins": ["jasmine", "codeceptjs"]
+
+    
 }
