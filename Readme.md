@@ -1,0 +1,1 @@
+Run "npm run build-image" on terminal before npm run build for the responsive hero images :)
